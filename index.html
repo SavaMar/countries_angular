@@ -22,11 +22,11 @@
 
 		<ul>
 	      <li ng-repeat="(key, val) in continents">
-	        <input type="checkbox" ng-model="val" ng-change="parentChange(key, val)">
+	        <input type="checkbox" ng-model="val" ng-change="parentChange(key, val)" btn-checkbox-false>
 	        {{ continents[key] }}
 	        <ul>
 	          <li ng-repeat="country in countries" data-ng-if="country.continent == key">
-	            <input type="checkbox" ng-model="country.selected" ng-change="c(country, key, val)"> <!-- ng-model="country.selected" -->
+	            <input type="checkbox" ng-model="country.selected" ng-change="c(country)"> <!-- ng-model="country.selected" -->
 	            {{country.name}} <small style="color: #ccc"> {{country.phone}}</small>
 	          </li>
 	        </ul>
