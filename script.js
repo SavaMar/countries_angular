@@ -31,17 +31,18 @@ angular.module('myApp', ['ui.bootstrap'])
 
 	$scope.checkedAll = function(continent, continent_name) {
 		var bool = continent_name;
-		var i = 0;
-		var j = 0;
+		var all_countries = 0;
+		var selected_countries = 0;
 		angular.forEach($scope.countries, function(v, k) {
 		    if(v.continent == continent) {
-		    	i+=1;
+		    	all_countries+=1;
 		    	if(v.selected) {
-		    		j+=1;
+		    		selected_countries+=1;
 		    	}
 		    }
 	    }); 
-	    if(i != j) {
+	    
+	    if(all_countries != selected_countries) {
     		bool = true
     	}else {
     		bool = false
@@ -54,4 +55,3 @@ angular.module('myApp', ['ui.bootstrap'])
 	    });
 	}
 });
-
