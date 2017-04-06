@@ -1,0 +1,29 @@
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mainTitle {
+	padding-bottom: 90px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.mainTitle input {
+	margin-top: 20px;
+}
+
+.continent {
+	color: #777;
+    display: block;
+    padding: 15px 15px;
+    border: 1px solid rgba(130,130,130,.2);
+    background-color: rgba(130,130,130,.1);
+    margin-bottom: 0px;
+}
+
+.country {
+	border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+}

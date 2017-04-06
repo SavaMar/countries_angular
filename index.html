@@ -2,11 +2,9 @@
 <html ng-app="myApp">
   <head>
     <title>Country App</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="style.css" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
 		crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="./node_modules/angular-ui-bootstrap/index.js"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
@@ -17,24 +15,27 @@
   </head>
   <body ng-controller="countriesCtrl">
   	<div class="container">
-  		<div class="page-header" style="border-bottom: none">
-  			<h1>Geographic permission</h1>
-  			<!-- <input type="text" class="form-control" placeholder="Search country" ng-model="query"> -->
+  		<div class="col-md-12" style="border-bottom: none">
+  			<div class="mainTitle">
+  				<div class="col-md-8">
+  					<h1>Geographic Permission</h1>
+  				</div>
+  				<div class="col-md-4">
+  					<input type="text" class="form-control" placeholder="Search country" ng-model="query">
+  				</div>
+  			</div>
   		</div>
-
-		<ul>
-	      <li class="continent" ng-repeat="(key, val) in continents">
-	        <input type="checkbox" ng-model="val" id="{{val}}" ng-change="checkedAll(key, val)" uib-btn-checkbox>
-	        {{ continents[key] }}
-	        <ul>
-	          <li ng-repeat="country in countries" data-ng-if="country.continent == key">
-	            <input type="checkbox" ng-model="country.selected" ng-change="selectCountries(country, key, val)"> <!-- ng-model="country.selected" -->
-	            {{country.name}} <small style="color: #ccc"> {{country.phone}}</small>
+		<ul class="col-md-12">
+	      <li ng-repeat="(key, val) in continents">
+	        <h2 class="continent"><input type="checkbox" ng-model="val" id="{{val}}" ng-change="checkedAll(key, val)" uib-btn-checkbox> {{ continents[key] }} </h2>
+	        <ul class="list-group">
+	          <li class="country" ng-repeat="country in countries" data-ng-if="country.continent == key">
+	            <input type="checkbox" ng-model="country.selected" ng-change="selectCountries(country, key, val)"> {{country.name}} <small style="margin-left: 5px">(+{{country.phone}})</small>
 	          </li>
 	        </ul>
 	      </li>
 	    </ul>
   	</div>
-     <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
